@@ -1,0 +1,4 @@
+{
+  "testFiles": "**/*.feature",
+  "baseUrl": "https://academy-crud-frontend.herokuapp.com/"
+}
