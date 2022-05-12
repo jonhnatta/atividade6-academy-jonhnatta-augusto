@@ -5,6 +5,7 @@ class CriarUsuario {
   inputEmail = "#email"
   pdatedAt = "2022-05-10T04:58:17.886Z"
   createdAt = "2022-05-10T04:58:17.886Z"
+  mensagemApiErro = "User already exists."
 
   visitar() {
     cy.visit("/")
@@ -76,7 +77,7 @@ class CriarUsuario {
   interceptarCadastroExistente() {
     cy.intercept("https://crud-api-academy.herokuapp.com/api/v1/users", {
       statusCode: 422,
-      body: { "error": "User already exists." }
+      body: { "error": this.mensagemApiErro }
     })
   }
 
